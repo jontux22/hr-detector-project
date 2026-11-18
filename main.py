@@ -5,6 +5,7 @@ import time
 from slope_inspection import SlopeInspection
 from sine_display import SineWaveDisplay
 from freq_display import FrequencyDisplay
+from startup import Startup
 from button import Button
 
 
@@ -30,8 +31,11 @@ class HeartRateMonitor:
         self.slope_inspection = SlopeInspection()
         self.sine_display = SineWaveDisplay(1)
         self.freq_display = FrequencyDisplay(2)
+        self.startup = Startup()
     
     def run(self):
+        self.startup.run()
+        
         self.print_menu()
         
         while True:
